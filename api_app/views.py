@@ -8,6 +8,10 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from api_app.models import User
 
 
+class Welcome(APIView):
+    def get(self, request):
+        return Response('Welcome to Credicxo API by Rahul Jadhav')
+
 
 # Add User Class
 class AddUser(APIView):
