@@ -33,7 +33,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True        
 
-CORS_ALLOW_HEADERS = [
+CORS_ALLOW_HEADERS = [                              # Allow the following headers
     'accept',
     'accept-encoding',
     'authorization',
@@ -67,6 +67,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'credicxo_project.wsgi.application'
 
+# SQLite database configuration
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'credicxo_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'credicxo_db',
-        'USER': 'postgres',
-        'PASSWORD': 'abc456',
+        'NAME': 'credicxo_db',                                  # Database name
+        'USER': 'postgres',                                     # Postgres username
+        'PASSWORD': 'abc456',                                   # Postgres password
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '5432',                                         # Postgres port
     }
 }
 
@@ -90,7 +91,7 @@ DATABASES = {
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
 }
 
 SIMPLE_JWT = {
@@ -124,6 +125,7 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+AUTH_USER_MODEL = 'api_app.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

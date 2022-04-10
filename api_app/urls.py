@@ -1,11 +1,9 @@
 from django.urls import path
 from .views import *
 
-urlpatterns = [
-    
-    # Base URL
-    path('', Welcome.as_view()),
-    
-    # Main APIs
-    # path('api/', include('api_app.urls')),
+urlpatterns = [    
+
+    path('addUser/', AddUser.as_view()),                        # Add User Endpoint
+
+    path('viewUser/', ViewUser.as_view()),                      # View User Endpoint
 ]
